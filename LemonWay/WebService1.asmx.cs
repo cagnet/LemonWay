@@ -1,6 +1,9 @@
-﻿using System;
+﻿using log4net;
+using log4net.Config;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Script.Services;
@@ -19,8 +22,11 @@ namespace LemonWay
     [System.ComponentModel.ToolboxItem(false)]
     // Pour autoriser l'appel de ce service Web depuis un script à l'aide d'ASP.NET AJAX, supprimez les marques de commentaire de la ligne suivante. 
     [System.Web.Script.Services.ScriptService]//Pour fournir le résultat en Json
+//    [assembly: log4net.Config.XmlConfigurator(ConfigFile = "Config/Log4Net.config", Watch = true)]
     public class WebService1 : System.Web.Services.WebService
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(WebService1));
+
         /// <summary>
         /// Crée une inatance de CoreLib qui contient toute les méthodes métier
         /// </summary>
@@ -35,7 +41,7 @@ namespace LemonWay
         /// <returns>Résutat du calcule de Fibonacci si n compris entre 0 et 101 sinon return -1</returns>
         [WebMethod]
         //La valeur de retour a été changée car dans l'ennoncé il est demandé un int hors au dela de 50 la valeur ne tient plus dans un int
-        public double Fibonacci(int n)
+        public decimal Fibonacci(int n)
         {
             return this.intance.Fibonacci(n);
         }

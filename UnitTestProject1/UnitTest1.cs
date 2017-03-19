@@ -13,8 +13,8 @@ namespace LemonWay.UnitTest
         public void FibonacciTest1_NegativeValeur()
         {
             int valeur = -1;
-            double expected = -1;
-            double actual = this.instance.Fibonacci(valeur);
+            decimal expected = -1;
+            decimal actual = this.instance.Fibonacci(valeur);
             Assert.AreEqual(expected, actual);
         }
 
@@ -22,8 +22,8 @@ namespace LemonWay.UnitTest
         public void FibonacciTest2_BorneInf()
         {
             int valeur = 0;
-            double expected = -1;
-            double actual = this.instance.Fibonacci(valeur);
+            decimal expected = -1;
+            decimal actual = this.instance.Fibonacci(valeur);
             Assert.AreEqual(expected, actual);
         }
 
@@ -31,8 +31,8 @@ namespace LemonWay.UnitTest
         public void FibonacciTest3_ValeurConforme1()
         {
             int valeur = 1;
-            double expected = 1;
-            double actual = this.instance.Fibonacci(valeur);
+            decimal expected = 1;
+            decimal actual = this.instance.Fibonacci(valeur);
             Assert.AreEqual(expected, actual);
         }
 
@@ -40,8 +40,8 @@ namespace LemonWay.UnitTest
         public void FibonacciTest4_ValeurConforme100()
         {
             int valeur = 100;
-            double expected = 3.54224848179262E+20;
-            double actual = this.instance.Fibonacci(valeur);
+            decimal expected = 3.54224848179262E+20;
+            decimal actual = this.instance.Fibonacci(valeur);
             Assert.AreEqual(expected, actual);
         }
 
@@ -49,8 +49,8 @@ namespace LemonWay.UnitTest
         public void FibonacciTest5_BorneSup()
         {
             int valeur = 101;
-            double expected = -1;
-            double actual = this.instance.Fibonacci(valeur);
+            decimal expected = -1;
+            decimal actual = this.instance.Fibonacci(valeur);
             Assert.AreEqual(expected, actual);
         }
         #endregion
